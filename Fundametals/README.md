@@ -286,7 +286,109 @@ Sure! Here's an explanation of the various topics you mentioned, including detai
    - `groupadd groupname`: Creates a new group.
    - `usermod -a -G groupname username`: Adds a user to a group.
 
----
+### User Management Commands
+
+1. **Adding a New User:**
+
+   - `useradd -c "comment" -d "/tmp/dir" newuser`
+
+2. **Modifying an Existing User:**
+
+   - To add a comment:  
+     `usermod -c "Politician" {username}`
+   - To change login name:  
+     `usermod -l {newusername} {username}`
+   - Temporary changing access of an account:  
+     `usermod -L {username}` (lock)  
+     `usermod -U {username}` (unlock)
+   - To set a password:  
+     `usermod -p {password} {username}`
+
+3. **Deleting a User:**
+   - `userdel {username}` (only deletes user)
+   - `userdel -r {username}` (delete user and home directory)
+
+### Password Management
+
+- List all password-related info:  
+  `chage -l {username}`
+- Manage password settings:
+  - Max days: `chage -M {value} {username}`
+  - Min days: `chage -m {value} {username}`
+  - Warning days: `chage -W {value} {username}`
+  - Account expiration: `chage -E {value} {username}`
+- **Using `passwd`:**
+  - Delete password:  
+    `passwd -d {username}`
+  - Lock password:  
+    `passwd -l {username}`
+  - Unlock password:  
+    `passwd -u {username}`
+  - Force password expiration:  
+    `passwd -e {username}`
+
+### Group Management
+
+- **Viewing Groups:**
+  - `/etc/group` (list of all groups)
+- **Adding/Deleting Groups:**
+  - `groupadd {groupname}`
+  - `groupdel {groupname}`
+- **Managing User Groups:**
+  - Add user to a group:  
+    `usermod -a -G {groupname} {username}`
+  - Remove user from a group:  
+    `usermod -r -G {groupname} {username}`
+
+### Permission Management
+
+- **Understanding Permissions:**
+
+  - Format: `-uuu-ggg-ooo-` (owner-group-others)
+  - Read (r) = 4, Write (w) = 2, Execute (x) = 1
+
+- **Granting/Revoke Permissions:**
+  - Grant: `+`, Revoke: `-`
+  - Example: `chmod u+rwx, g+rw, o+r {filename}`
+- **Numeric Permissions:**
+
+  - Example: `chmod 644 {filename}`
+
+- **Effective Permissions:**
+  - Default umask values:
+    - Root: 022
+    - Non-root: 002
+
+### Special Permissions
+
+1. **SetUID (s):**  
+   Allows users to run an executable with the privileges of the executable's owner.  
+   Command:  
+   `chmod u+s {filename}`
+
+2. **SetGID (g):**  
+   Allows users in a group to run executables with the group privileges or to create files in a directory with the same group ownership.  
+   Command:  
+   `chmod g+s {directory}`
+
+3. **Sticky Bit:**  
+   Only the file owner can delete or modify the file. Commonly set on directories like `/tmp`.  
+   Command:  
+   `chmod +t {directory}`
+
+### Ownership Management
+
+- Change file ownership:  
+  `chown {newowner} {filename}`
+- Change both user and group ownership:  
+  `chown {username}:{groupname} {filename}`
+
+### File Metadata
+
+- **File Metadata Management:**
+  - `stat {filename}`: Displays detailed file status, including time-related attributes.
+- **Inode Number:**  
+  Each file has an inode number associated with it, which contains metadata.
 
 ### Windows Commands
 
