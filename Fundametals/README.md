@@ -1,5 +1,3 @@
-Here's a comprehensive explanation of each topic from your notes, converted into a structured `README.md` format. I’ve also included relevant sections regarding Windows for completeness.
-
 ````markdown
 # Linux and Windows System Administration Guide
 

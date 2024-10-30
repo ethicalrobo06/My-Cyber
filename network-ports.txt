@@ -1,0 +1,263 @@
+		Well Known Ports
+
+
+1 TCPMUX(TCP port service multiplexer)
+5 remote job entry
+7 echo protocol
+9 discard protocol
+11 active users
+13 daytime protocol
+18 message send protocol
+19 character generator protocol (chargen)
+20 ftp data transfer
+21 ftp control 
+22 ssh
+23 telnet
+25 SMTP
+27 NSE-FE (NSW USER SYSTEM)
+29 MSG-ICP
+31 MSG-AUTH
+33 DSP (DISPLAY SUPPORT PROTOCOL)
+37 TIME PROTOCOL
+38 RAP (ROUTE ACCESS PROTOCOL)
+39 RLP (RESOURCE LOCATION PROTOCOL)
+42 HOST NAME SERVER PROTOCOL
+43 WHOIS PROTOCOL
+44 MPM FLAGS PROTOCOL
+45 MPM (MESSAGE PROCESSING MODULE)
+47 MPM SEND
+48 auditd (Digital Audit Daemon)
+49: TACACS Login Host protocol (TACACS+)
+50: Remote Mail Checking Protocol
+52: Xerox Network Systems (XNS) Time Protocol
+53: Domain Name System (DNS)
+54: Xerox Network Systems (XNS) Clearinghouse (Name Server)
+55: ISI Graphics Language
+56: Xerox Network Systems (XNS) Authentication Protocol
+58: Xerox Network Systems (XNS) Mail
+61: NIFTP-Based Mail protocol (historically assigned)
+62: ACA Services (acas)
+63: WHOIS++ protocol
+64: Communications Integrator (CI)
+65: TACACS-Database Service
+66: Oracle SQL*NET
+67: Bootstrap Protocol (BOOTP) server; also used by Dynamic Host Configuration Protocol (DHCP)
+68: Bootstrap Protocol (BOOTP) client; also used by Dynamic Host Configuration Protocol (DHCP)
+69: Trivial File Transfer Protocol (TFTP)
+70: Gopher protocol
+71-74: NETRJS protocol
+76: Distributed External Object Store (deos)
+78: vettcp (Vettcp)
+79: Finger protocol
+80: Hypertext Transfer Protocol (HTTP)
+81: TorPark onion routing (unofficial)
+82: XFER Utility / TorPark control (unofficial)
+83: MIT ML Device (mit-ml-dev)
+84: Common Trace Facility (ctf)
+85: MIT ML Device (mit-ml-dev)
+86: Micro Focus Cobol (mfcobol)
+88: Kerberos authentication system
+89: SU/MIT Telnet Gateway (su-mit-tg)
+90: DNSIX Security Attribute Token Map / PointCast (dotcom) (unofficial)
+91: MIT Dover Spooler (mit-dov)
+92: Network Printing Protocol (npp)
+93: Device Control Protocol (dcp)
+94: Tivoli Object Dispatcher (objcall)
+95: SUPDUP, terminal-independent remote login
+96: DIXIE Protocol Specification (dixie)
+97: Swift Remote Virtual File Protocol (swift-rvf)
+98: TAC News (tacnews)
+99: Metagram Relay (metagram)
+101: NIC host name
+102: ISO Transport Service Access Point (TSAP) Class 0 protocol
+104: Digital Imaging and Communications in Medicine (DICOM)
+105: CCSO Nameserver
+106: macOS Server, password server (unofficial)
+107: Remote User Telnet Service (RTelnet)
+108: IBM Systems Network Architecture (SNA) gateway access server
+109: Post Office Protocol, version 2 (POP2)
+110: Post Office Protocol, version 3 (POP3)
+111: Open Network Computing Remote Procedure Call (ONC RPC)
+113: Ident, authentication service/identification protocol
+115: Simple File Transfer Protocol (SFTP)
+117: UUCP Mapping Project (path service)
+118: Structured Query Language (SQL) Services
+119: Network News Transfer Protocol (NNTP)
+123: Network Time Protocol (NTP)
+126: Unisys Unitary Login / NXEdit
+135: DCE endpoint resolution / Microsoft EPMAP (End Point Mapper)
+137: NetBIOS Name Service
+138: NetBIOS Datagram Service
+139: NetBIOS Session Service
+143: Internet Message Access Protocol (IMAP)
+151: HEMS
+152: Background File Transfer Program (BFTP)
+153: Simple Gateway Monitoring Protocol (SGMP)
+156: Structured Query Language (SQL) Service
+158: Distributed Mail System Protocol (DMSP)
+161: Simple Network Management Protocol (SNMP)
+162: Simple Network Management Protocol Trap (SNMPTRAP)
+165: Xerox
+169: SEND
+170: Network PostScript print server
+177: X Display Manager Control Protocol (XDMCP)
+179: Border Gateway Protocol (BGP)
+180: RIS
+194: Internet Relay Chat (IRC)
+199: SNMP Unix Multiplexer (SMUX)
+201: AppleTalk Routing Maintenance
+209: Quick Mail Transfer Protocol
+210: ANSI Z39.50
+213: Internetwork Packet Exchange (IPX)
+218: Message Posting Protocol (MPP)
+220: Internet Message Access Protocol (IMAP), version 3
+259: Efficient Short Remote Operations (ESRO)
+262: Arcisdms
+264: Border Gateway Multicast Protocol (BGMP)
+280: HTTP Management (http-mgmt)
+308: Novastor Online Backup
+311: macOS Server Admin (AppleShare IP Web administration)
+318: PKIX Time Stamp Protocol (TSP)
+319: Precision Time Protocol (PTP) event messages
+320: Precision Time Protocol (PTP) general messages
+323: Resource Public Key Infrastructure (RPKI)
+350: Mapping of Airline Traffic over Internet Protocol (MATIP) type A
+351: MATIP type B
+356: Cloanto Amiga Explorer and VMs (cloanto-net-1)
+366: On-Demand Mail Relay (ODMR)
+369: Rpc2portmap
+370: Coda authentication server (codaauth2)
+371: ClearCase albd
+376: Amiga Envoy Network Inquiry Protocol
+383: HP data alarm manager
+384: A Remote Network Server System
+387: AppleTalk Update-based Routing Protocol (AURP)
+388: Unidata LDM near real-time data distribution protocol
+389: Lightweight Directory Access Protocol (LDAP)
+399: Digital Equipment Corporation DECnet+ (Phase V) over TCP/IP
+401: Uninterruptible Power Supply (UPS)
+427: Service Location Protocol (SLP)
+433: Network News Transfer Protocol (NNTP)
+434: Mobile IP Agent (RFC 5944)
+443: Hypertext Transfer Protocol Secure (HTTPS)
+444: Simple Network Paging Protocol (SNPP)
+445: Microsoft-DS (Directory Services) SMB file sharing
+464: Kerberos Change/Set password
+465: Message Submission over TLS protocol / URL Rendezvous Directory for Cisco SSM
+475: tcpnethaspsrv, Aladdin Knowledge Systems Hasp services
+491: Centro Software ERP ports (unofficial)
+497 - Retrospect
+500 - Internet Security Association and Key Management Protocol (ISAKMP) / Internet Key Exchange (IKE)
+502 - Modbus Protocol
+504 - Citadel, multiservice protocol for Citadel groupware system
+510 - FirstClass Protocol (FCP), used by FirstClass client/server groupware system
+512 - Rexec, Remote Process Execution; Comsat (used with Biff)
+513 - rlogin; Who
+514 - Remote Shell (rsh, remsh); Syslog (used for system logging)
+515 - Line Printer Daemon (LPD), print service
+517 - Talk
+518 - NTalk
+520 - EFS, extended file name server; Routing Information Protocol (RIP)
+521 - Routing Information Protocol Next Generation (RIPng)
+524 - NetWare Core Protocol (NCP)
+525 - Timed, Timeserver
+530 - Remote Procedure Call (RPC)
+532 - netnews
+533 - netwall, for emergency broadcasts
+540 - Unix-to-Unix Copy Protocol (UUCP)
+542 - Commerce Applications
+543 - klogin, Kerberos login
+544 - kshell, Kerberos Remote shell
+546 - DHCPv6 client
+547 - DHCPv6 server
+548 - Apple Filing Protocol (AFP) over TCP
+550 - new-rwho, new-who
+554 - Real Time Streaming Protocol (RTSP)
+556 - Remotefs, RFS, rfs_server
+560 - rmonitor, Remote Monitor
+561 - monitor
+563 - NNTP over TLS/SSL (NNTPS)
+564 - 9P (Plan 9)
+585 - Previously assigned for IMAPS (now deregistered in favor of port 993)
+587 - Email Message Submission
+591 - FileMaker 6.0 Web Sharing (HTTP Alternate)
+593 - HTTP RPC Ep Map, Remote Procedure Call over HTTP
+601 - Reliable Syslog Service
+604 - TUNNEL profile (BEEP peers application layer tunnel)
+623 - ASF Remote Management and Control Protocol (ASF-RMCP) & IPMI Remote Management Protocol
+625 - Open Directory Proxy (ODProxy)
+631 - Internet Printing Protocol (IPP); Common Unix Printing System (CUPS) administration console
+635 - RLZ DBase
+636 - Lightweight Directory Access Protocol over TLS/SSL (LDAPS)
+639 - Multicast Source Discovery Protocol (MSDP)
+641 - SupportSoft Nexus Remote Command (control/listening)
+643 - SANity
+646 - Label Distribution Protocol (LDP)
+647 - DHCP Failover protocol
+648 - Registry Registrar Protocol (RRP)
+651 - IEEE-MMS
+653 - SupportSoft Nexus Remote Command (data)
+654 - Media Management System (MMS) Media Management Protocol (MMP)
+655 - Tinc VPN daemon
+657 - IBM RMC (Remote monitoring and Control) protocol
+660 - macOS Server administration (version 10.4 and earlier)
+666 - Doom (first online FPS); airserv-ng (aircrack-ng's server for remote-controlling wireless devices)
+674 - Application Configuration Access Protocol (ACAP)
+684 - CORBA IIOP SSL
+688 - REALM-RUSD (ApplianceWare Server Appliance Management Protocol)
+690 - Velneo Application Transfer Protocol (VATP)
+691 - MS Exchange Routing
+694 - Linux-HA high-availability heartbeat
+695 - IEEE Media Management System over SSL (IEEE-MMS-SSL)
+698 - Optimized Link State Routing (OLSR)
+700 - Extensible Provisioning Protocol (EPP)
+701 - Link Management Protocol (LMP)
+702 - Internet Registry Information Service (IRIS) over BEEP
+706 - Secure Internet Live Conferencing (SILC)
+711 - Cisco Tag Distribution Protocol (replaced by MPLS Label Distribution Protocol)
+712: Topology Broadcast based on Reverse-Path Forwarding routing protocol (TBRPF)
+749: Kerberos administration
+750: kerberos-iv, Kerberos version IV
+751: kerberos_master, Kerberos authentication
+752: passwd_server, Kerberos password (kpasswd) server
+753: Reverse Routing Header (RRH)
+754: tell send
+760: krbupdate [kreg], Kerberos registration
+782: Conserver serial-console management server
+783: SpamAssassin spamd daemon
+800: mdbs-daemon
+802: MODBUS/TCP Security
+808: Microsoft Net.TCP Port Sharing Service
+829: Certificate Management Protocol
+830: NETCONF over SSH
+831: NETCONF over BEEP
+832: NETCONF for SOAP over HTTPS
+833: NETCONF for SOAP over BEEP
+843: Adobe Flash
+847: DHCP Failover protocol
+848: Group Domain Of Interpretation (GDOI) protocol
+853: DNS over TLS (RFC 7858); DNS over QUIC or DNS over DTLS
+860: iSCSI
+861: OWAMP control
+862: TWAMP control
+873: rsync file synchronization protocol
+888: CD DataBase (CDDB) protocol; IBM Endpoint Manager Remote Control
+897: Brocade SMI-S RPC
+898: Brocade SMI-S RPC SSL
+902: VMware ESXi
+903: VMware ESXi
+953: BIND remote name daemon control (RNDC)
+981: Remote HTTPS management for firewall devices running embedded Check Point VPN-1 software
+987: Sony PlayStation Wake On Lan
+988: Lustre (file system) Protocol (data)
+989: FTPS Protocol (data), FTP over TLS/SSL
+990: FTPS Protocol (control), FTP over TLS/SSL
+991: Netnews Administration System (NAS)
+992: Telnet protocol over TLS/SSL
+993: Internet Message Access Protocol over TLS/SSL (IMAPS)
+994: Previously assigned to Internet Relay Chat over TLS/SSL (IRCS)
+995: Post Office Protocol 3 over TLS/SSL (POP3S)
+1010: ThinLinc web-based administration interface
+1011–1020: Reserved
+1023: Reserved
+z/OS Network File System (NFS) (potentially ports 991–1023)
