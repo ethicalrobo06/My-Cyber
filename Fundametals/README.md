@@ -440,3 +440,293 @@ Sure! Here's an explanation of the various topics you mentioned, including detai
 5. **Hybrid Encryption**: Combines the strengths of both symmetric and asymmetric encryption for security and performance.
 
 ---
+
+Sure! Here’s a conversion of the provided content from VK (VKontakte) to Facebook format, ensuring it is suitable for sharing on Facebook, with an emphasis on clarity and engagement:
+
+---
+
+**🔒 Cybersecurity Essentials: Windows & Linux Tips**
+
+**🖥️ Windows Commands:**
+
+- **Network Config:**
+  - Windows: `ipconfig`
+  - Linux: `ifconfig`
+- **Ping Command:** Think of it as saying "hello" to a server!
+- **Trace Route:**
+  - Windows 7: `tracert google.com`
+  - Windows 10/11: `tracert google.com`
+- **View Network Balance:** [bitref.com](http://www.bitref.com) for Bitcoin addresses.
+
+- **Directory Management:**
+
+  - `dir`: List files
+  - `mkdir dir-name`: Create a directory
+  - `rmdir /s/q dir-name`: Remove a non-empty directory
+
+- **System Commands:**
+  - `date`: View or set the system date
+  - `pwd`: Display the current directory
+  - `chkdsk`: Check disk for errors
+- **Change Drive:** Navigate to D drive using `D:\`.
+
+---
+
+**🛠️ Group Policy Editor (gpedit.msc)** _(Only for Pro/Ultimate Versions)_:
+
+- **Hide Drives:**  
+  User Configuration → Administrative Templates → Windows Components → File Explorer → Hide these specific drives → Enabled → Select Drive → Apply → OK.
+
+- **Access Denied to Drives:**  
+  User Configuration → Administrative Templates → Windows Components → File Explorer → Prevent access to specific drives → Enabled → Select Drive → Apply → OK.
+
+- **Restrict Access to Control Panel:**  
+  User Configuration → Administrative Templates → Control Panel → Prohibit access to Control Panel → Enabled → Apply → OK.
+
+- **Restrict Access to CMD:**  
+  User Configuration → Administrative Templates → System → Prevent access to the cmd → Enabled → Apply → OK.
+
+- **Block USB Access:**  
+  User Configuration → Administrative Templates → System → Removable Storage Access → All removable storage classes → Enabled → Apply → OK.
+
+---
+
+**📝 Registry Editor:**
+
+1. Open with `regedit.exe`.
+2. Navigate to:
+   - HKEY_CLASSES_ROOT
+   - HKEY_CURRENT_USER
+   - HKEY_LOCAL_MACHINE
+   - HKEY_USERS
+   - HKEY_CURRENT_CONFIG
+
+**Demo:** Add a welcome message on the Windows login screen:
+
+- `regedit.exe` → HKEY_LOCAL_MACHINE → SOFTWARE → Microsoft → Windows → Current Version → Policies → System → Set `legalnoticecaption` and `legalnoticetext`.
+
+---
+
+**🖥️ Windows Event Viewer:**
+
+- Access via `eventvwr.exe` → Windows Logs → Security → Review logs by date, source, and event ID.
+
+---
+
+**🔍 Linux Tips:**
+
+- **Hide Files:** Use `mkdir .file-name` to create a hidden directory.
+- **Show Hidden Files:** Use `ls -a`.
+
+---
+
+**💻 Disk Management:**
+
+- **File Systems:**
+
+  - FAT: For files up to 4GB
+  - NTFS: For larger files
+
+- **Format Drives:** Access via `diskmgmt.msc` to manage partitions.
+- `compmgmt.ms`: Storage --> Disk Management ---> right click on drive ---> shrink volume ---> created --> create on unallocated size ---> new simple wizard.
+
+---
+
+**🔒 Windows Security:**
+
+- **Password Location:** C:\Windows\System32\config\SAM
+- **Password Reset Tools:** Use pwdump7 or lusrmgr.msc for user management.
+
+**🔑 Offline Bypass:** Use Hiren Boot CD to reset passwords.
+
+**How to change password using Hiren Boot**
+
+Start ---> All Programs ---> Security ---> Password ---> Anti Passwords ---> Select user name ---> change password --> Enter new password
+
+---
+
+**💡 Browser Security Tips:**
+
+- Always check for HTTPS to ensure a secure connection.
+- Use ad blockers and password managers for enhanced security.
+
+---
+
+### BIOS
+
+- **CMOS Battery**: The CMOS battery's job is to remember all BIOS settings, including date & time, boot order, BIOS password, etc. If removed for 1 minute, it will forget these settings.
+
+---
+
+### Login Bypass in Linux OS
+
+1. On the GRUB loading screen, press `e` repeatedly while Linux is starting.
+2. A new interface will open: **setparams**.
+3. Go to the line starting with the word **linux**. Remove `ro quiet splash` and replace it with `rw init=/bin/bash`.
+4. Press `Ctrl + X` to save.
+5. A new interface opens: type `passwd root`, then `exec /sbin/init`. The system will restart.
+
+---
+
+### Browser Security Configuration
+
+- **Note**: Never trust a website with HTTPS, as it can be a fraudster.
+- **Role of HTTPS**: To secure communication between the browser and the server.
+- Security measures:
+  - HTTPS
+  - Ad blockers
+  - Password Manager
+  - Awareness of deepfakes
+
+---
+
+### Password Manager
+
+- **Example**: LastPass - Known for data breaches.
+
+---
+
+### Disk Security Configuration
+
+- **BitLocker**: No bypass is available for BitLocker.
+  - **Power Off or Shutdown**: C:\ D:\ → Encrypted → `%4ffg4F%$#GFFG4D`
+  - **Power On**: Enter BitLocker Password → Use your device.
+
+---
+
+### Router Configuration
+
+- **Find Router IP**:
+  - In Linux: `route -n`
+  - In Windows: `ipconfig`
+- **Default Gateway IP**: Open it in a browser; it will ask for a username and password.
+- **Security on Wi-Fi Router**:
+  1. **Open**: No password required for connectivity.
+  2. **WEP**: Wired Equivalent Privacy (weak).
+  3. **WPA**: WiFi Protected Access (weak security).
+  4. **WPA2**: WiFi Protected Access 2x Encryption (recommended).
+  5. **WPA3**: WiFi Protected Access 3x Encryption.
+
+---
+
+### Malware
+
+- **BSOD**: Blue Screen of Death.
+- **Warning Signs**:
+
+  - Antivirus alerts
+  - Shortcut files
+  - System slowdown
+  - Camera-like blinking
+
+- **Types**:
+  - Static effects: Only impact a particular target system.
+
+**Demos**:
+
+1. Folder Bomber
+2. Shutdown Virus
+3. System Crasher
+4. Program Bomber
+5. Pranks
+
+**Shutdown Command**:
+
+- `@echo off` : All tasks should be background.
+  - `-s` : Shutdown
+  - `-r` : Restart
+  - `-t` : Time
+  - `-c` : Comments
+
+**Startup Folder Location**: `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp`
+
+---
+
+### Keylogger
+
+- **Revealer**: `ctrl + alt + F9` (default).
+- **Bank Security**: Uses a virtual keyboard.
+- **Hacker Methods**:
+  - Keylogger + Screenshot on every mouse click (especially for virtual keyboards).
+  - Bank Security: Random keyboard shuffle.
+  - Other Keyloggers: Refog.
+
+**Security Measures**:
+
+1. Use On-Screen Keyboard (OSK).
+2. Monitor Task Manager for suspicious activity.
+3. Avoid using personal accounts on public systems.
+4. Be cautious about sharing systems with unknown people.
+
+---
+
+### Trojan
+
+- **Description**: A Trojan horse appears genuine but executes malicious code in the background.
+
+**Examples**:
+
+- DarkComet
+- Sending files online: WeTransfer
+- Articles about Adwards and Norton.
+
+**Security Against Trojan**:
+
+- Signature lists of bad files can be checked at [VirusTotal](https://www.virustotal.com).
+
+**Bypassing Antivirus**:
+
+- **Using Cryptors**: E.g., Aegis Cryptor (FUD).
+
+**System Configuration**:
+
+- Use `msconfig.msc` to manage startup items in Windows 10/11.
+
+---
+
+### Ransomware
+
+- **Description**: Encrypts all files on your system. Decryption requires a private key held by the hacker.
+- **Payment**: Ransom typically demanded in cryptocurrency (BTC, ETH).
+
+**Notable Incident**:
+
+- 2017: WikiLeaks Vault7 leak; WannaCry could hack any computer without files.
+
+**Prevention**: Regular data backups and using anti-malware solutions.
+
+---
+
+### Threats
+
+- **Types of Threats**:
+  - Distributed Denial of Service (DDoS)
+  - Brute-force attacks
+  - Zero-day attacks
+  - Spoofing
+  - On-path attacks
+  - Insider threats
+  - SQL injection
+  - Cross-Site Scripting (XSS)
+
+---
+
+### Social Engineering
+
+- **Types**:
+  - Phishing: Using fake links (e.g., PyPhisher).
+  - Vishing: Voice phishing.
+  - Smishing: SMS phishing.
+  - Shoulder Surfing: Observing someone’s private information.
+  - Impersonation: Pretending to be someone else.
+  - Dumpster Diving: Searching for confidential information.
+
+**Security Against Phishing**:
+
+1. Verify domain names (e.g., facebook.com ≠ fabecook.com).
+2. Be wary of urgent messages (e.g., "Your account is suspended").
+3. Avoid trusting only HTTPS.
+
+---
+
+This summary captures all the key points you've provided in an organized format. Let me know if there's anything else you'd like to add or modify!
