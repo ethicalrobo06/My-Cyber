@@ -1,7 +1,6 @@
-```markdown
 # Network Administration
 
-## Communication Components
+### Communication Components
 
 1. Sender
 2. Receiver
@@ -78,11 +77,9 @@ There are 65,535 possible port numbers.
 - **IMAP (Internet Message Access Protocol)**: [143]
 - **POP (Post Office Protocol)**: [110]
 - **DHCP (Dynamic Host Configuration Protocol)**: Server Port [67], Client Port [68]
-```
 
-Here’s your provided information formatted into a `README.md` file:
+---
 
-```markdown
 # MAC Address Types and IP Addressing
 
 ## MAC Address Types
@@ -131,7 +128,7 @@ A single bit can represent 2 possible values: 0 (zero) and 1 (one). In the case 
 
 WCM is calculated as follows:
 
-**Step 1**: Network Address = IP & SM (binary last part)  
+**Step 1**: Network Address = IP & SM (binary last part)
 Example:
 
 - IP: 192.168.10.50
@@ -153,9 +150,8 @@ For IP: 175.250.10.90 & Subnet Mask: 255.255.0.0
 
 ### Detailed Example
 
-- IP: 175.168.10.59 / Subnet Mask: 255.255.255.248  
+- IP: 175.168.10.59 / Subnet Mask: 255.255.255.248
   Binary representation:
-```
 
 00111011 (175)
 11111000 (168)
@@ -170,32 +166,32 @@ For IP: 175.250.10.90 & Subnet Mask: 255.255.0.0
 
 11000000
 
-```
-
 **Most Significant Bit**: 1 - 198
+
 - 1111: 240
 - 11111: 248
 - 111111: 251
 
 ### Method 2: Block Size
+
 - Block Size: 255.255.255.255
 - Subnet Mask: 255.255.255.248
 - Result: 7
 - \(202 / 8\)
 
 ### Example Network Address Calculation
+
 - IP: 172.20.200.102
 - Subnet Mask: 255.255.224.0
 - NID bit: 1
 - HID bit: 0
 
 ### Calculation
+
 - Subnet Mask: 255.255.255.192
 - Bits: 8, 8, 8
 - Calculate HID: \(2^{10} = 1024\), \(2^{13} = 8192\)
 - HID = 13, NID = 32 - 13 = 19
-
-```
 
 {11111111.11111111.111}{0000.00000000} = 255.255.255.0
 
@@ -392,35 +388,38 @@ DHCP can provide several parameters to clients, including:
 
 Here’s an example of how to configure a DHCP server on a Cisco router:
 
-```bash
+bash
 hostname dhcp-server
 interface Gig0/0
- ip address 192.168.1.1 255.255.255.0  # Configure the first interface
- no shutdown
+ip address 192.168.1.1 255.255.255.0 # Configure the first interface
+no shutdown
 
 interface f0/1
- ip address 192.168.2.1 255.255.255.0  # Configure the second interface
- no shutdown
+ip address 192.168.2.1 255.255.255.0 # Configure the second interface
+no shutdown
 
 # Show all IP interfaces
+
 do show ip interface brief
 
 # Exclude specific addresses from DHCP pool
-ip dhcp excluded-address 192.168.3.1  # Exclude an address already assigned
-ip dhcp excluded-address {ip_address}  # Replace with actual IPs to exclude
+
+ip dhcp excluded-address 192.168.3.1 # Exclude an address already assigned
+ip dhcp excluded-address {ip_address} # Replace with actual IPs to exclude
 
 # Configure the first DHCP pool
+
 ip dhcp pool Pool1
- network 192.168.1.0 255.255.255.0
- default-router 192.168.1.1           # Set the default gateway
- dns-server 8.8.8.8                    # Set the DNS server
+network 192.168.1.0 255.255.255.0
+default-router 192.168.1.1 # Set the default gateway
+dns-server 8.8.8.8 # Set the DNS server
 
 # Configure the second DHCP pool
+
 ip dhcp pool Pool2
- network 192.168.3.0 255.255.255.0
- default-router 192.168.3.1           # Set the default gateway
- dns-server 8.8.8.8                    # Set the DNS server
-```
+network 192.168.3.0 255.255.255.0
+default-router 192.168.3.1 # Set the default gateway
+dns-server 8.8.8.8 # Set the DNS server
 
 Here's a detailed explanation of each topic you mentioned:
 
