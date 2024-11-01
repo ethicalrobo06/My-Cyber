@@ -1,8 +1,3 @@
-Here's a structured and detailed README.md file for this web exploitation project. I've broken down each concept into sections, provided clear headings, and used formatting to make it both informative and visually engaging.
-
----
-
-````markdown
 # Web Exploitation Techniques
 
 This repository contains a collection of web exploitation techniques focused on SQL Injection, Directory Traversal, Local File Inclusion, and File Upload Vulnerabilities. The examples and commands provided here can be used for ethical hacking and testing of web application vulnerabilities in controlled environments.
@@ -14,6 +9,7 @@ This repository contains a collection of web exploitation techniques focused on 
 3. [Directory Traversal](#directory-traversal)
 4. [File Inclusion](#file-inclusion)
 5. [File Upload Vulnerabilities](#file-upload-vulnerabilities)
+6. [Cross-Site Scripting (XSS)](#cross-site-scripting-xss)
 
 ---
 
@@ -22,6 +18,7 @@ This repository contains a collection of web exploitation techniques focused on 
 ```sh
 sudo docker container ps
 ```
+
 ````
 
 #### SQL Injection Example
@@ -302,3 +299,4 @@ In DOM-based XSS, the vulnerability lies in the client-side JavaScript code that
 These techniques are for educational purposes and should only be used in authorized environments. Unauthorized access or testing without permission is illegal.
 
 ---
+````
