@@ -19,12 +19,14 @@ This repository contains a collection of web exploitation techniques focused on 
 sudo docker container ps
 ```
 
-````
+```
 
 #### SQL Injection Example
 
 - **Basic payload**: `' OR 1=1 #`
 - **To extract passwords**: `' UNION SELECT user, password FROM users #`
+
+```
 
 **DVWA Example**:
 
@@ -299,4 +301,3 @@ In DOM-based XSS, the vulnerability lies in the client-side JavaScript code that
 These techniques are for educational purposes and should only be used in authorized environments. Unauthorized access or testing without permission is illegal.
 
 ---
-````
